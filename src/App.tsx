@@ -49,9 +49,12 @@ const App = () => {
     
     <div>
       <h1>Appetizer Games</h1>
-      <button className="start" onClick={startQuiz}>
-        Start
-      </button>
+      {/* logic to check when not display the start and stop button  */}
+      { gameOver || selectedAnswers.length === TOTAL_QUESTIONS ? (
+        <button className="start" onClick={startQuiz}>
+          Start
+        </button>) : null
+      }
       <p className="score">Score :</p>
       <p>Loading Questions ...</p>
 {/* <QuestionCard
