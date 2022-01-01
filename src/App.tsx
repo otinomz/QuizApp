@@ -80,7 +80,7 @@ const App = () => {
         </button>) : null
       }
       {/* we also would show the score if we are not in game over mode*/}
-      {!gameOver ? <p className="score">Score :</p> : null}
+      {!gameOver ? <p className="score">Score : {score }</p> : null}
       
       {/* loading only going to show when we load items */}
       {isLoading && <p>Loading Questions ...</p> }
