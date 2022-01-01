@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import QuestionCard from './components/QuestionCard'
 import { Difficulty, QuestionState, fetchQuizQuestions } from './API'
+// styles
+import { GlobalStyle } from './App.styles'
 
 export type AnswerObject = {
   question: string
