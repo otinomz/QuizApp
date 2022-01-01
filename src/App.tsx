@@ -76,7 +76,7 @@ const App = () => {
       }
       
       {/* next button logic */}
-      {!gameOver && !isLoading && selectedAnswers.length === number + 1 &&(
+      {!gameOver && !isLoading && selectedAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 &&( 
         <button className="next" onClick={nextQuestion}>
           Next Question
         </button>)
