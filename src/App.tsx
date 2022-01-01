@@ -59,7 +59,7 @@ const App = () => {
       {!gameOver ? <p className="score">Score :</p> : null}
       
       {/* loading only going to show when we load items */}
-      {IsLoading ?  <p>Loading Questions ...</p> : null}
+      {IsLoading && <p>Loading Questions ...</p> }
       
 
 {/* <QuestionCard
