@@ -12,7 +12,7 @@ type AnswerObject = {
 const TOTAL_QUESTIONS = 15
 
 const App = () => {
-  const [IsLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [questions, setQuestions] = useState<QuestionState[]>([])
   const [number, setNumber] = useState(0)
   const [selectedAnswers, setSelectedAnswers] = useState<AnswerObject[]>([])
@@ -59,11 +59,11 @@ const App = () => {
       {!gameOver ? <p className="score">Score :</p> : null}
       
       {/* loading only going to show when we load items */}
-      {IsLoading && <p>Loading Questions ...</p> }
+      {isLoading && <p>Loading Questions ...</p> }
       
       {/* questions only going to show if we are not loading or in game over */}
       {/* logic in short circuit */}
-      { !IsLoading && !gameOver && (
+      { !isLoading && !gameOver && (
           <QuestionCard
           question={questions[number].question} 
           answers={questions[number].answers} 
@@ -75,9 +75,13 @@ const App = () => {
         ) 
       }
       
-      <button className="next" onClick={nextQuestion}>
-        Next Question
-      </button>
+      {/* next button logic */}
+      {!gameOver && !isLoading && selectedAnswers.length === number + 1 &&(
+        <button className="next" onClick={nextQuestion}>
+          Next Question
+        </button>)
+      }
+      
 
     </div>
   )
