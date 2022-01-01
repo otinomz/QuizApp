@@ -61,15 +61,20 @@ const App = () => {
       {/* loading only going to show when we load items */}
       {IsLoading && <p>Loading Questions ...</p> }
       
-
-{/* <QuestionCard
-         question={questions[number].question} 
-         answers={questions[number].answers} 
-         callbackFunction={checkAnswer}
-         selectedAnswer={selectedAnswers ? selectedAnswers[number] : undefined }
-         questionNumber={number + 1} 
-         totalQuizQuestions={TOTAL_QUESTIONS}
-       /> */}
+      {/* questions only going to show if we are not loading or in game over */}
+      {/* logic in short circuit */}
+      { !IsLoading && !gameOver && (
+          <QuestionCard
+          question={questions[number].question} 
+          answers={questions[number].answers} 
+          callbackFunction={checkAnswer}
+          selectedAnswer={selectedAnswers ? selectedAnswers[number] : undefined }
+          questionNumber={number + 1} 
+          totalQuizQuestions={TOTAL_QUESTIONS}
+          />
+        ) 
+      }
+      
       <button className="next" onClick={nextQuestion}>
         Next Question
       </button>
