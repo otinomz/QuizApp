@@ -38,7 +38,23 @@ const App = () => {
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
-
+    if (!gameOver) {
+      // get users selected answers from
+      const answer = e.currentTarget.value
+      // check answer against correct answers
+      const correct = questions[number].correct_answer === answer
+      // add score if answer is correct
+      if (correct) setScore(previous => previous + 1)
+      
+      // save answer in the array for selected answers
+      const answerObject = {
+        question: questions[number].question,
+        answer,
+        correct,
+        correctAnswer: questions[number].correct_answer
+      }
+      setSelectedAnswers((previous) => [...previous, answerObject])
+    }
   }
 
   const nextQuestion = () => {
@@ -76,7 +92,7 @@ const App = () => {
       }
       
       {/* next button logic */}
-      {!gameOver && !isLoading && selectedAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 &&( 
+      { !gameOver && !isLoading && selectedAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 &&( 
         <button className="next" onClick={nextQuestion}>
           Next Question
         </button>)
