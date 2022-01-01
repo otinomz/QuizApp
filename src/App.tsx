@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import QuestionCard from './components/QuestionCard'
 import { Difficulty, QuestionState, fetchQuizQuestions } from './API'
 // styles
-import { GlobalStyle } from './App.styles'
+import { GlobalStyle, Wrapper } from './App.styles'
 
 export type AnswerObject = {
   question: string
@@ -74,7 +74,7 @@ const App = () => {
   return (
     <>
       < GlobalStyle/>
-      <div>
+      <Wrapper>
         <h1>Appetizer Games</h1>
         {/* logic to check when not display the start and stop button  */}
         { gameOver || selectedAnswers.length === TOTAL_QUESTIONS ? (
@@ -108,7 +108,7 @@ const App = () => {
             Next Question
           </button>)
         }
-      </div>
+      </Wrapper>
     </>
   )
 }
