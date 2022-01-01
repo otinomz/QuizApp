@@ -6,7 +6,7 @@ type QuestionCardProps = {
     callback: any
     selectedAnswer: string
     questionNumber: number
-    totalQuestions: number
+    totalQuizQuestions: number
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -15,10 +15,12 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     callback,
     selectedAnswer,
     questionNumber,
-    totalQuestions }) =>{
+    totalQuizQuestions }) =>{
     return (
         <div>
-            Question Card
+            <p className="number">
+                Question: {questionNumber} / {totalQuizQuestions}
+            </p>
         </div>
     )
 }

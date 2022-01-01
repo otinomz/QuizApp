@@ -30,7 +30,7 @@ const App = () => {
         callback=""
         selectedAnswer=""
         questionNumber={1}
-        totalQuestions={15}
+        totalQuizQuestions={15}
       />
 
       <button className="next" onClick={nextQuestion}>
