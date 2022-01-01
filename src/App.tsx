@@ -72,44 +72,44 @@ const App = () => {
   }
 
   return (
-    
-    <div>
-      <h1>Appetizer Games</h1>
-      {/* logic to check when not display the start and stop button  */}
-      { gameOver || selectedAnswers.length === TOTAL_QUESTIONS ? (
-        <button className="start" onClick={startQuiz}>
-          Start
-        </button>) : null
-      }
-      {/* we also would show the score if we are not in game over mode*/}
-      {!gameOver ? <p className="score">Score : {score }</p> : null}
-      
-      {/* loading only going to show when we load items */}
-      {isLoading && <p>Loading Questions ...</p> }
-      
-      {/* questions only going to show if we are not loading or in game over */}
-      {/* logic in short circuit */}
-      { !isLoading && !gameOver && (
-          <QuestionCard
-          question={questions[number].question} 
-          answers={questions[number].answers} 
-          callbackFunction={checkAnswer}
-          selectedAnswer={selectedAnswers ? selectedAnswers[number] : undefined }
-          questionNumber={number + 1} 
-          totalQuizQuestions={TOTAL_QUESTIONS}
-          />
-        ) 
-      }
-      
-      {/* next button logic */}
-      { !gameOver && !isLoading && selectedAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 &&( 
-        <button className="next" onClick={nextQuestion}>
-          Next Question
-        </button>)
-      }
-      
-
-    </div>
+    <>
+      < GlobalStyle/>
+      <div>
+        <h1>Appetizer Games</h1>
+        {/* logic to check when not display the start and stop button  */}
+        { gameOver || selectedAnswers.length === TOTAL_QUESTIONS ? (
+          <button className="start" onClick={startQuiz}>
+            Start
+          </button>) : null
+        }
+        {/* we also would show the score if we are not in game over mode*/}
+        {!gameOver ? <p className="score">Score : {score }</p> : null}
+        
+        {/* loading only going to show when we load items */}
+        {isLoading && <p>Loading Questions ...</p> }
+        
+        {/* questions only going to show if we are not loading or in game over */}
+        {/* logic in short circuit */}
+        { !isLoading && !gameOver && (
+            <QuestionCard
+            question={questions[number].question} 
+            answers={questions[number].answers} 
+            callbackFunction={checkAnswer}
+            selectedAnswer={selectedAnswers ? selectedAnswers[number] : undefined }
+            questionNumber={number + 1} 
+            totalQuizQuestions={TOTAL_QUESTIONS}
+            />
+          ) 
+        }
+        
+        {/* next button logic */}
+        { !gameOver && !isLoading && selectedAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 &&( 
+          <button className="next" onClick={nextQuestion}>
+            Next Question
+          </button>)
+        }
+      </div>
+    </>
   )
 }
 
