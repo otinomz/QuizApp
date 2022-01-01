@@ -2,17 +2,17 @@ import React from 'react'
 
 type QuestionCardProps = {
     question: string
-    answer: string[]
-    callback: any
-    selectedAnswer: string
+    answers: string[]
+    callbackFunction: any
+    selectedAnswer: any
     questionNumber: number
     totalQuizQuestions: number
-}
+} 
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
     question,
-    answer,
-    callback,
+    answers,
+    callbackFunction,
     selectedAnswer,
     questionNumber,
     totalQuizQuestions }) =>{
@@ -21,8 +21,19 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
             <p className="number">
                 Question: {questionNumber} / {totalQuizQuestions}
             </p>
+
+            <p dangerouslySetInnerHTML={{ __html: question }} />
+            
+            <div>
+                { answers.map(answer => (
+                    <div>
+                        <button disabled={selectedAnswer} onClick={callbackFunction}></button>
+                    </div>
+                ))}
+                <span dangerouslySetInnerHTML={{ __html: answer }} />
+            </div>
         </div>
-    )
+    ) 
 }
 
 export default QuestionCard

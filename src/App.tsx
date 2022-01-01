@@ -26,9 +26,9 @@ const App = () => {
       <p>Loading Questions</p>
       <QuestionCard
         question=''
-        answer={[]}
-        callback=""
-        selectedAnswer=""
+        answers={[]}
+        callbackFunction=""
+        selectedAnswer={true}
         questionNumber={1}
         totalQuizQuestions={15}
       />
