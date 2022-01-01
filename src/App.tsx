@@ -55,8 +55,10 @@ const App = () => {
           Start
         </button>) : null
       }
-      <p className="score">Score :</p>
+      {/* we also would show the score if we are not in game over mode*/}
+      { !gameOver ? <p className="score">Score :</p> : null}
       <p>Loading Questions ...</p>
+
 {/* <QuestionCard
          question={questions[number].question} 
          answers={questions[number].answers} 
