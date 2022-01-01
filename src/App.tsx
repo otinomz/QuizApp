@@ -1,24 +1,40 @@
 import React, { useState } from 'react'
 import QuestionCard from './components/QuestionCard'
-import { Difficulty } from './API'
-import { fetchQuizQuestions } from './API'
+import { Difficulty, QuestionState, fetchQuizQuestions } from './API'
 
+type AnswerObject = {
+  question: string
+  answer: string
+  correct: boolean
+  correctAnswer: string
+}
 
-const TOTAL_QUESTIONS = 10
+const TOTAL_QUESTIONS = 15
 
 const App = () => {
-  const [loading, setIsLoading] = useState(false)
-  const [questions, setQuestions] = useState([])
+  const [isloading, setIsLoading] = useState(false)
+  const [questions, setQuestions] = useState<QuestionState[]>([])
   const [number, setNumber] = useState(0)
-  const [selectedAnswers, setSelectedAnswers] = useState([])
-  const [score, setScores] = useState(0)
+  const [selectedAnswers, setSelectedAnswers] = useState<AnswerObject[]>([])
+  const [score, setScore] = useState(0)
   const [gameOver, setGameOver] = useState(true)
 
-  console.log(fetchQuizQuestions(TOTAL_QUESTIONS, Difficulty.EASY));
-  
-
+  console.log(questions);
+   
   const startQuiz = async () => {
+    setIsLoading(true)
+    setGameOver(false)
 
+    const newQuestions = await fetchQuizQuestions(
+      TOTAL_QUESTIONS,
+      Difficulty.EASY
+    )
+     
+    setQuestions(newQuestions)
+    setScore(0)    
+    setSelectedAnswers([])
+    setNumber(0)
+    setIsLoading(false)
   }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
