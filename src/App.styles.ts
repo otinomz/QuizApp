@@ -34,10 +34,10 @@ export const Wrapper = styled.div`
         color: white;
     }
     
-    .setScore{
+    .score{
         color: white;
-        font-size: 2rem;
-        margin: 0;
+        font-size: 1.2rem;
+        margin: 10px 0px;
     }
 
     h1{
@@ -50,28 +50,27 @@ export const Wrapper = styled.div`
         -webkit-text-fill-color : transparent; 
         -moz-background-clip : text;
         -moz-text-fill-color : transparent;
-
         filter: drop-shadow(2px 2px #678D9F);
         font-size: 70px;
+        margin-top: 27px;
         text-align: center;
         font-weight: 400;
-        margin: 20px;
-
+        
         @media(max-width : 768px){
             font-size: 30px;
         }
     }
 
     .start, .next {
-    cursor: pointer;
-    background: linear-gradient(180deg, #ffffff, #ffcc91);
-    border: 2px solid #d38558;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    height: 40px;
-    margin: 20px 0;
-    padding: 0 40px;
-  }
+        cursor: pointer;
+        background: linear-gradient(180deg, #ffffff, #ffcc91);
+        border: 2px solid #d38558;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        height: 40px;
+        margin: 20px 0;
+        padding: 0 40px;
+    }
   
 
     
