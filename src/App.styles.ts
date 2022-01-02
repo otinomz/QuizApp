@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
     .score{
         color: white;
         font-size: 1.2rem;
-        margin: 10px 0px;
+        margin: 5px 0px;
     }
 
     h1{
@@ -52,7 +52,7 @@ export const Wrapper = styled.div`
         -moz-text-fill-color : transparent;
         filter: drop-shadow(2px 2px #678D9F);
         font-size: 70px;
-        margin-top: 27px;
+        margin-top: 15px;
         text-align: center;
         font-weight: 400;
         
