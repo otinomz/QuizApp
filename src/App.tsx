@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import QuestionCard from './components/QuestionCard'
-import { Footer } from "./components/Footer"
+import {Footer} from "./components/Footer"
 import { Difficulty, QuestionState, fetchQuizQuestions } from './API'
 // styles
 import { GlobalStyle, Wrapper } from './App.styles'
@@ -112,7 +112,7 @@ const App = () => {
             Next Question
           </button>)
         }
-        <Footer />
+        <Footer/>
       </Wrapper>
       
     </>
