@@ -2,16 +2,22 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   max-width: 1100px;
-  width: 80%;
-  margin: 0 auto;
+  width: 100%;
   background: #ebfeff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   text-align: center;
+
   p {
     font-size: 1rem;
   }
+
+  @media(max-width : 768px){
+    width: 80%;
+    margin: 0 auto;
+  }
+  
 `;
 
 type ButtonWrapperProps = {
@@ -21,8 +27,6 @@ type ButtonWrapperProps = {
 
 export const ButtonWrapper = styled.div<ButtonWrapperProps>`
   transition: all 0.3s ease;
-  width: 70%;
-  background: red;
   margin: 0 auto;
 
   :hover {
