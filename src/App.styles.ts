@@ -30,6 +30,8 @@ export const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 
+    background: red;
+
     > p {
         color: white;
     }
@@ -56,6 +58,10 @@ export const Wrapper = styled.div`
         text-align: center;
         font-weight: 400;
         margin: 20px;
+
+        @media(max-width : 768px){
+            font-size: 30px;
+        }
     }
 
     .start, .next {
@@ -69,9 +75,7 @@ export const Wrapper = styled.div`
     padding: 0 40px;
   }
   
-  .start {
-    max-width: 200px;
-  }
+
     
 
 `
