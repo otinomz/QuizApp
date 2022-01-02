@@ -79,9 +79,12 @@ const App = () => {
         <h1>Appetizer Games</h1>
         {/* logic to check when not display the start and stop button  */}
         { gameOver || selectedAnswers.length === TOTAL_QUESTIONS ? (
-          <button className="start" onClick={startQuiz}>
-            Start
-          </button>) : null
+          <>
+            <p>click to play</p>
+            <button className="start" onClick={startQuiz}>
+              Start
+            </button>
+          </>) : null
         }
         {/* we also would show the score if we are not in game over mode*/}
         {!gameOver ? <p className="score">Score : {score }</p> : null}
