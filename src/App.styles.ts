@@ -71,8 +71,5 @@ export const Wrapper = styled.div`
         margin: 20px 0;
         padding: 0 40px;
     }
-  
-
-    
 
 `
